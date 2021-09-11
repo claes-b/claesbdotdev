@@ -1,0 +1,30 @@
+@use 'breakpoints';
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container {
+    width: 60%;
+    min-width: 1000px;
+    padding: 5rem;
+}
+
+$columns: 12;
+
+[class^=col-] {
+    flex-basis: 100%;
+}
+
+@include breakpoints.mq-min(medium) {
+    @for $i from 1 through $columns {
+        .col-#{$i} {
+            flex: 0 0 (100% / ($columns / $i));
+        }
+
+        .col-offset-#{$i} {
+            margin-left: 100% / ($columns / $i);
+        }
+    }
+}

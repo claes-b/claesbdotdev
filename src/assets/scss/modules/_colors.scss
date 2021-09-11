@@ -1,0 +1,37 @@
+$purple: #AF6BE4;
+$pale-yellow: #FFFCF0;
+
+$home-color: #A0E46B;
+$home-accent-color: #736be4;
+
+$resources-color: #9E4EDF;
+$resources-accent-color: #a0e46b;
+
+$about-color:#FFB800;
+$about-accent-color: #00c7ff;
+
+$skills-color: #E54E4E;
+$skills-accent-color: #4ee59a;
+
+$blog-color: #11d6ff;
+$blog-accent-color: #fff5f0;
+
+.text--home-color {
+    color: $home-color;
+}
+
+.text--resources-color {
+    color: $resources-color;
+}
+
+.text--about-color {
+    color: $about-color;
+}
+
+.text--skills-color {
+    color: $skills-color;
+}
+
+.text--blog-color {
+    color: $blog-color;
+}

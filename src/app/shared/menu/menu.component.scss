@@ -1,0 +1,69 @@
+@use '../../../assets/scss/modules/fonts';
+@use '../../../assets/scss/modules/breakpoints';
+@use '../../../assets/scss/modules/colors';
+
+nav {
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.menu__large-screen {
+      @include breakpoints.mq-max(small) {
+        display: none;
+      }
+    }
+
+    &.menu__small-screen {
+      @include breakpoints.mq-min(small) {
+        display: none;
+      }
+      flex-direction: column;
+      & li {
+        width: 100%;
+      }
+    }
+  }
+
+  li {
+    padding: 1em;
+    font-size: fonts.$font-xl;
+    font-weight: bold;
+
+    @include breakpoints.mq-max(medium) {
+      padding: 0.5em;
+    }
+  }
+
+  a {
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+   
+    &::after {
+      z-index: -1;
+        content: "";
+        position: absolute;
+        top: -0.5rem;
+        bottom: -20.5rem;
+        left: -2rem;
+        bottom: 0;
+        width: 1rem;
+        background: colors.$skills-color;
+        // transform: scaleX(0.1);
+        transform-origin: left;
+        transition: width 100ms ease-in;
+    }
+
+    &:hover::after {
+        transform-origin: left;
+        // transform: scaleX(1);
+        width: calc(100% + 4rem);
+    }
+
+    &.active::after {
+      width: calc(100% + 4rem);
+    }
+  }
+}

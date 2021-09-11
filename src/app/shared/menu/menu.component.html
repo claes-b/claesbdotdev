@@ -1,0 +1,41 @@
+<nav role="navigation">
+  <ul class="menu__large-screen">
+    <li
+      *ngFor="let menuItem of menuItems; index as i"
+    >
+      <a
+        role="button"
+        [tabIndex]="i"
+        [ngClass]="'text--' + menuItem.id + '-color'"
+        [routerLink]="menuItem.path"
+        [attr.aria-label]="menuItem.display"
+        routerLinkActive="active"
+      >
+        {{ menuItem.display }}</a
+      >
+    </li>
+  </ul>
+  <button
+    [attr.aria-expanded]="showMenu"
+    (click)="onToggleMenu()"
+    aria-label="Menu"
+  >
+    M
+  </button>
+  <ul class="menu__small-screen" *ngIf="showMenu">
+    <li
+      *ngFor="let menuItem of menuItems; index as i"
+    >
+      <a
+        role="button"
+        tabindex="0"
+        [ngClass]="'text--' + menuItem.id + '-color'"
+        [routerLink]="menuItem.path"
+        [attr.aria-label]="menuItem.display"
+        routerLinkActive="active"
+      >
+        {{ menuItem.display }} {{ i }} hej</a
+      >
+    </li>
+  </ul>
+</nav>

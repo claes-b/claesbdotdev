@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'assets/scss/modules' as *;
+
+body {
+    font-family: $primary_font;
+    font-size: $font-reg;
+    font-weight: $regular;
+    margin: 0;
+    //margin-top: -16px;
+}
